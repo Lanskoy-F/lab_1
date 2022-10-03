@@ -33,15 +33,16 @@ u=1
 d=0
 filepath = r"j.csv"
 f = open("gg.txt", "w")
-with open(filepath, "r", newline="") as file:
-    while d<20:
-        i = random.randint(1, 9410)
-        for row in file:
-            a = row.split(';')
-            if m == i:
-                f.write(str(u)+') ')
-                f.write(a[2] + '.' + a[1] + '-' + a[3] + '; \n')
-                u+=1
-            m+=1
-        m=1
-        d+=1
+while d<20:
+    file = open(filepath, "r", newline="")
+    i = random.randint(1, 9410)
+    for row in file:
+        a = row.split(';')
+        if m == i:
+            f.write(str(u)+') ')
+            f.write(a[2] + '.' + a[1] + '-' + a[3] + '; \n')
+            u+=1
+        m+=1
+    m=1
+    d+=1
+    file.close()
